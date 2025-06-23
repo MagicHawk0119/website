@@ -1,1 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Fragment Engine</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="index.html" class="logo">
+            <img src="assets/logo.png" width=70></img>
+            Fragment
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="downloads.html">Download</a>
+            <a href="#">Documentation</a>
+            <a href="#">Donate</a>
+        </div>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
 
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <div class="particles" id="particles"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Create Games</h1>
+                <p class="hero-subtitle">Your open-source, easy-to-use, 3D Python game engine.</p>
+                <a href="#get-started" class="cta-button-outline">Get Started</a>
+            </div>
+            <div class="hero-video-container">
+                <div class="video-wrapper">
+                    <video autoplay muted loop playsinline>
+                        <source src="assets/hero_video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-overlay"></div>
+                    <div class="video-reflection"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <h2 class="section-title">Why Fragment Engine?</h2>
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3 class="card-title">Lightning Fast</h3>
+                <p class="card-content">Built with performance in mind. Fragment delivers unparalleled speed and efficiency for your games.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 class="card-title">Open Source</h3>
+                <p class="card-content">Truly open in development and welcomes developers all over to contribute.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <h3 class="card-title">Easy-To-Use</h3>
+                <p class="card-content">Built simple, yet able to create complex games.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-feather"></i>
+                </div>
+                <h3 class="card-title">Lightweight</h3>
+                <p class="card-content">Fragment is extremely light and runs on minimal storage.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-terminal"></i>
+                </div>
+                <h3 class="card-title">Developer Friendly</h3>
+                <p class="card-content">Access a wide range of intuitive scripting API perfect for any task.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-cube"></i>
+                </div>
+                <h3 class="card-title">Powerful Rendering</h3>
+                <p class="card-content">Render realistic 3D scenes and build charming 3D games with Fragment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Python Scripting Section -->
+    <section id="python" class="section">
+        <div class="python-container">
+            <div class="python-content">
+                <h2 class="python-title">Python Scripting Support</h2>
+                <p class="python-text">Fragment Engine features native <span class="python-highlight">Python scripting</span> support, allowing developers to write game logic using one of the world's most popular programming languages.</p>
+                <p class="python-text">With Python's simplicity and readability, you can:</p>
+                <ul class="python-list">
+                    <li>Create game mechanics faster with Python's intuitive syntax</li>
+                    <li>Leverage the vast ecosystem of Python libraries</li>
+                    <li>Prototype ideas rapidly during game development</li>
+                </ul>
+                <p class="python-text">Fragment's Python integration combines the performance of C++ with the flexibility of Python, giving you the best of both worlds.</p>
+            </div>
+            <div class="python-image">
+                <div class="python-logo">
+                    <div class="python-logo-inner">
+                        <img src="assets/python_logo.png" width=300 height=300 alt="Python Logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Started Section -->
+    <section id="get-started" class="section">
+        <div class="cta-card">
+            <h2 class="cta-title">Get Started Now</h2>
+            <p class="cta-text">Ready? Download Fragment Engine today and start creating your dream game with the powerful tools and intuitive workflow.</p>
+            <a href="downloads.html" class="cta-button">Start Creating</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-text">Copyright © Fragment Engine, all rights reserved</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Particle effect
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                const size = Math.random() * 10 + 2;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const animationDuration = Math.random() * 20 + 10;
+                const animationDelay = Math.random() * 5;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                particle.style.animation = `float ${animationDuration}s ease-in-out ${animationDelay}s infinite`;
+                
+                particlesContainer.appendChild(particle);
+            }
+            
+            // Add floating animation
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes float {
+                    0%, 100% { transform: translate(0, 0); }
+                    25% { transform: translate(${Math.random() * 40 - 20}px, ${Math.random() * 40 - 20}px); }
+                    50% { transform: translate(${Math.random() * 40 - 20}px, ${Math.random() * 40 - 20}px); }
+                    75% { transform: translate(${Math.random() * 40 - 20}px, ${Math.random() * 40 - 20}px); }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if(this.getAttribute('href') !== '#') {
+                        e.preventDefault();
+                        document.querySelector(this.getAttribute('href')).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -100px 0px"
+            };
+            
+            // Section titles
+            const sectionTitles = document.querySelectorAll('.section-title');
+            sectionTitles.forEach(title => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+                
+                observer.observe(title);
+            });
+            
+            // Feature cards
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                entry.target.classList.add('active');
+                            }, 150 * index);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+                
+                observer.observe(card);
+            });
+            
+            // Python section
+            const pythonSection = document.getElementById('python');
+            const pythonContainer = document.querySelector('.python-container');
+            const pythonContent = document.querySelector('.python-content');
+            
+            const pythonObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        pythonContainer.classList.add('active');
+                        setTimeout(() => {
+                            pythonContent.classList.add('active');
+                        }, 300);
+                        pythonObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+            
+            pythonObserver.observe(pythonSection);
+            
+            // Get started card
+            const ctaCard = document.querySelector('.cta-card');
+            const ctaObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        ctaObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+            
+            ctaObserver.observe(ctaCard);
+            
+            // Navbar scroll effect
+            window.addEventListener('scroll', () => {
+                const nav = document.querySelector('.nav');
+                nav.classList.toggle('scrolled', window.scrollY > 50);
+            });
+            
+            // Hamburger menu
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', () => {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            });
+        });
+    </script>
+</body>
+</html>
